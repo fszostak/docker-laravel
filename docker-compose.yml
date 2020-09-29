@@ -11,7 +11,9 @@ services:
 
   myapp:
     tty: true
-    image: docker.io/bitnami/laravel:8-debian-10
+    build:
+      dockerfile: docker/laravel/Dockerfile
+      context: .
     environment:
       - DB_HOST=mariadb
       - DB_USERNAME=my_user
